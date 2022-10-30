@@ -5,14 +5,13 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import pom.HomePage;
 import pom.OrderPage;
 import pom.OrderStatusPage;
 
 import java.time.Duration;
 
-import pom.Service;
+import service.Service;
 
 @RunWith(Parameterized.class)
 public class TestOrderUI {

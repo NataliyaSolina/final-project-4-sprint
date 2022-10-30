@@ -1,4 +1,4 @@
-package pom;
+package service;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
