@@ -8,13 +8,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import pom.HomePage;
 import pom.OrderPage;
+import pom.OrderStatusPage;
 
 import java.time.Duration;
 
-import pom.OrderStatusPage;
 import pom.Service;
-
-import static java.lang.Thread.sleep;
 
 @RunWith(Parameterized.class)
 public class TestOrderUI {
@@ -57,8 +55,8 @@ public class TestOrderUI {
 
     @Before
     public void createDriverOpenUrl() {
-//        driver = new ChromeDriver();
-        driver = new FirefoxDriver();
+        driver = new ChromeDriver();
+//        driver = new FirefoxDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.get("https://qa-scooter.praktikum-services.ru/");
     }
@@ -82,18 +80,13 @@ public class TestOrderUI {
         objOrderPage.clickButtonOrderBy();
 
         objOrderPage.checkOrderAcceptTitle();
-        objOrderPage.clickOrderAcceptButton();
+        objOrderPage.clickOrderAcceptButton();      //БАГ в хроме не реагирует на нажатие
 
         objOrderPage.checkOrderPageInfoTitle();
         String orderNumber = objOrderPage.getOrderNumberVariable();
         objOrderPage.clickOrderInfoButton();
 
-        objStatusOrderPage.checkStatusOrderAll(orderNumber, userName, userSurname, userAddress, userMetro, userPhone, userDateOut, userPeriod, userColor, userComment);
-        try {
-            sleep(50000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        objStatusOrderPage.checkStatusOrderAll(orderNumber, userName, userSurname, userAddress, userMetro, userPhone, userDateOut, userPeriod, userColor, userComment); // 2 бага описаы внутри
     }
 
     @After

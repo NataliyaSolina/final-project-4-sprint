@@ -1,18 +1,13 @@
 package pom;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
 public class HomePage {
-    private WebDriver driver;
-    // Заголовок
+    private final WebDriver driver;
+    // Заголовок главный
     private final By mainTitle = By.xpath(".//div[@class='Home_FirstPart__3g6vG']/div[@class='Home_Header__iJKdX']");
     // Кнопка заказать верх
     private final By buttonOrderByTop = By.xpath(".//div[@class='Header_Header__214zg']//button[@class='Button_Button__ra12g']");
@@ -20,13 +15,10 @@ public class HomePage {
     private final By buttonOrderByBottom = By.xpath(".//div[@class='Home_ThirdPart__LSTEE']//button[contains(@class, 'Button_Button__ra12g')]");
     // панелька кук - кнопка
     private final By buttonCookiesAccept = By.className("App_CookieButton__3cvqF");
-
-    // Вопросы о важном - заголовок и стрелочки лист (элементы в конструкторе)
-      private final By questionsTitle = By.xpath(".//div[@class='Home_FourPart__1uthg']/div[@class='Home_SubHeader__zwi_E']");
+    // Вопросы о важном - заголовок и стрелочк вопрос-ответ (элементы в конструкторе)
+    private final By questionsTitle = By.xpath(".//div[@class='Home_FourPart__1uthg']/div[@class='Home_SubHeader__zwi_E']");
     private By accordionItemsQuestion = null;
     private By accordionItemsAnswer = null;
-    //= By.id("accordion__heading-0");
-
 
     public HomePage(WebDriver driver) {
         this.driver = driver;

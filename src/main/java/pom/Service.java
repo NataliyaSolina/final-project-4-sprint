@@ -7,8 +7,8 @@ import java.util.Date;
 
 public class Service {
 
-    private static Date today;
-    private static Date tomorrow;
+    private static final Date today;
+    private static final Date tomorrow;
     private static final DateFormat dateFormatIn;
     private static final DateFormat dateFormatOut;
 

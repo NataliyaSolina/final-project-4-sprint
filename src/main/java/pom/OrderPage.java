@@ -8,7 +8,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertEquals;
 
 public class OrderPage {
-    private WebDriver driver;
+    private final WebDriver driver;
     // заголовок форма заказа (для кого)
     private final By orderTitleForWho = By.className("Order_Header__BZXOb");
     // Имя
@@ -45,7 +45,6 @@ public class OrderPage {
     private final By orderInfoTitle = By.xpath(".//div[@class='Order_Modal__YZ-d3']/div[@class='Order_ModalHeader__3FDaJ']");
     private final By orderInfoInfo = By.xpath(".//div[@class='Order_Modal__YZ-d3']/div[@class='Order_ModalHeader__3FDaJ']/div");
     private final By orderInfoButton = By.xpath(".//div[@class='Order_Modal__YZ-d3']//button[text()='Посмотреть статус']");
-
 
     public OrderPage(WebDriver driver, String userMetro, String userDate, String userPeriod, String userColor) {
         this.driver = driver;

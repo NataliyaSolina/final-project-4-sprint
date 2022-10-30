@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 
 public class OrderStatusPage {
 
-    private WebDriver driver;
+    private final WebDriver driver;
     // Таблица заказа - номер заказа, имя, фамилия, адрес, метро, телефон, дата. переод, цвет и коммент
     private final By statusOrderNumber = By.xpath(".//div[@class='Track_Content__St6Kn']//input");
     private final By statusUserName = By.xpath(".//div[@class='Track_OrderInfo__2fpDL']/div[1]/div[2]");
@@ -69,9 +69,9 @@ public class OrderStatusPage {
         checkStatusUserName(userName);
         checkStatusUserSurname(userSurname);
         checkStatusUserAddress(userAddress);
-//        checkStatusUserMetro(userMetro);
+        checkStatusUserMetro(userMetro);            //БАГ сдвиг на один (передается номер элемента с еденицы. а выводиться номер в массиве элементов начиная с нуля)
         checkStatusUserPhone(userPhone);
-//        checkStatusUserDate(userDate);
+        checkStatusUserDate(userDate);              //БАГ выводиться дата + период(срок аренды)
         checkStatusUserPeriod(userPeriod);
         checkStatusUserColor(userColor);
         checkStatusUserComment(userComment);
