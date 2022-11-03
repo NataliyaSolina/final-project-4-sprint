@@ -60,3 +60,4 @@ public class TestAccordionListUI {
         driver.quit();
     }
 }
+//TODO купили новый комп на нем не успевает прогружаться - сделать задержки на пустоту строки
