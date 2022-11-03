@@ -65,7 +65,7 @@ public class HomePage {
 
     public void waitForLoadAccordionItems() {
         new WebDriverWait(driver, Duration.ofSeconds(5))
-            .until(driver -> (driver.findElement(accordionItemsAnswer).getText() != null));
+            .until(driver -> (!driver.findElement(accordionItemsAnswer).getText().isEmpty()));
     }
 
     public void checkAccordionItems(String textAnswer) {
