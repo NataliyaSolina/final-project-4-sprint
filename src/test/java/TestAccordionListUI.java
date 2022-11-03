@@ -40,7 +40,7 @@ public class TestAccordionListUI {
     public void createDriverOpenUrl() {
         driver = new ChromeDriver();
 //        driver = new FirefoxDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.get("https://qa-scooter.praktikum-services.ru/");
     }
 
@@ -51,9 +51,9 @@ public class TestAccordionListUI {
         objHomePage.checkOrderPageForWho();
         objHomePage.clickButtonCookiesAccept();
         objHomePage.clickOnAccordionItems();
+        objHomePage.waitForLoadAccordionItems();
         objHomePage.checkAccordionItems(textAnswer);
     }
-
 
     @After
     public void tearDown() {

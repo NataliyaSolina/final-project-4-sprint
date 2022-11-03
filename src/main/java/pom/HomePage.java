@@ -2,6 +2,9 @@ package pom;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 import static org.junit.Assert.assertEquals;
 
@@ -58,6 +61,11 @@ public class HomePage {
 
     public void clickOnAccordionItems() {
         driver.findElement(accordionItemsQuestion).click();
+    }
+
+    public void waitForLoadAccordionItems() {
+        new WebDriverWait(driver, Duration.ofSeconds(5))
+            .until(driver -> (driver.findElement(accordionItemsAnswer).getText() != null));
     }
 
     public void checkAccordionItems(String textAnswer) {
