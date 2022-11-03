@@ -5,6 +5,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import pom.HomePage;
 import pom.OrderPage;
 import pom.OrderStatusPage;
@@ -54,8 +55,8 @@ public class TestOrderUI {
 
     @Before
     public void createDriverOpenUrl() {
-        driver = new ChromeDriver();
-//        driver = new FirefoxDriver();
+//        driver = new ChromeDriver();
+        driver = new FirefoxDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.get("https://qa-scooter.praktikum-services.ru/");
     }
