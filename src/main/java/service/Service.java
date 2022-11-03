@@ -17,8 +17,8 @@ public class Service {
         today = calendar.getTime();
         calendar.add(Calendar.DAY_OF_YEAR, 1);
         tomorrow = calendar.getTime();
-        dateFormatIn = new SimpleDateFormat("dd-е MMMM yyyy г.");
-        dateFormatOut = new SimpleDateFormat("dd MMMM");
+        dateFormatIn = new SimpleDateFormat("d-е MMMM yyyy г.");
+        dateFormatOut = new SimpleDateFormat("d MMMM");
     }
 
 
